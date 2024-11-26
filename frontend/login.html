@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         .mytitle {
-            width:300px;
-            height:200px;
+            width: 300px;
+            height: 200px;
 
             color: white;
             text-align: center;
-            
+
             padding-top: 30px;
             border-radius: 8px;
 
@@ -19,15 +20,23 @@
             background-position: center;
             background-size: cover;
         }
+        .wrap {
+            width:300px;
+            margin: 50px auto 0px auto;
+        }
     </style>
 </head>
+
 <body>
-    <div class="mytitle">
-        <h1> 로그인 페이지 </h1>
-        <h5>아이디, 비밀번호를 입력해주세요</h5>
+    <div class = "wrap">
+        <div class="mytitle">
+            <h1> 로그인 페이지 </h1>
+            <h5>아이디, 비밀번호를 입력해주세요</h5>
+        </div>
+        <p>ID : <input type="text" /></p>
+        <p>PW : <input type="text" /></p>
+        <button> 로그인하기 </button>
     </div>
-    <p>ID : <input type="text" /></p>
-    <p >PW : <input type="text" /></p>
-    <button> 로그인하기 </button>
 </body>
+
 </html>
