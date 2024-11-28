@@ -44,6 +44,26 @@
             width: 1200px;
             margin: 30px auto 0px auto;
         }
+
+        .mypostingbox {
+            width: 500px;
+            margin: 30px auto 0px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 3px 0px blue;
+            border-radius: 5px;
+        }
+
+        .mybtn{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mybtn > button{
+            margin-right: 5px;
+        }
+        
     </style>
 </head>
 
@@ -51,6 +71,28 @@
     <div class="mytitle">
         <h1>나만의 추억앨범</h1>
         <button>추억 저장하기</button>
+    </div>
+    <div class="mypostingbox">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="앨범 이미지">
+            <label for="floatingInput">앨범 이미지</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="앨범 제목">
+            <label for="floatingInput">앨범 제목</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="앨범 내용">
+            <label for="floatingInput">앨범 내용</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="앨범 날짜">
+            <label for="floatingInput">앨범 날짜</label>
+        </div>
+        <div class="mybtn">
+            <button type="button" class="btn btn-dark">기록하기</button>
+            <button type="button" class="btn btn-outline-dark">닫기</button>
+        </div>
     </div>
     <div class="mycards">
         <div class="row row-cols-1 row-cols-md-4 g-4">
