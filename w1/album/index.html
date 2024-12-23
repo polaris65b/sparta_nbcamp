@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>나만의 추억 앨범</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
@@ -53,49 +54,76 @@
             border-radius: 5px;
         }
 
-        .mybtn{
+        .mybtn {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
         }
 
-        .mybtn > button{
+        .mybtn>button {
             margin-right: 5px;
         }
-        
     </style>
+
+    <script>
+        function openclose() {
+            $('#postingbox').toggle()
+        }
+        function makeCard() {
+            let image = $('#image').val()
+            let title = $('#title').val()
+            let contnet = $('#contnet').val()
+            let date = $('#date').val()
+
+            let temp_html = `            
+            <div class="col">
+                <div class="card h-100">
+                    <img src="${image}"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${title}</h5>
+                        <p class="card-text">${contnet}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">${date}</small>
+                    </div>
+                </div>
+            </div>`;
+            $('#card').append(temp_html)
+        }
+    </script>
 </head>
 
 <body>
     <div class="mytitle">
         <h1>나만의 추억앨범</h1>
-        <button>추억 저장하기</button>
+        <button onclick="openclose()">추억 저장하기</button>
     </div>
-    <div class="mypostingbox">
+    <div class="mypostingbox" id="postingbox">
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="앨범 이미지">
+            <input type="email" class="form-control" id="image" placeholder="앨범 이미지">
             <label for="floatingInput">앨범 이미지</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="앨범 제목">
+            <input type="email" class="form-control" id="title" placeholder="앨범 제목">
             <label for="floatingInput">앨범 제목</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="앨범 내용">
+            <input type="email" class="form-control" id="content" placeholder="앨범 내용">
             <label for="floatingInput">앨범 내용</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="앨범 날짜">
+            <input type="email" class="form-control" id="date" placeholder="앨범 날짜">
             <label for="floatingInput">앨범 날짜</label>
         </div>
         <div class="mybtn">
-            <button type="button" class="btn btn-dark">기록하기</button>
+            <button onclick="makeCard()" type="button" class="btn btn-dark">기록하기</button>
             <button type="button" class="btn btn-outline-dark">닫기</button>
         </div>
     </div>
     <div class="mycards">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col">
                 <div class="card h-100">
                     <img src="https://images.unsplash.com/photo-1446768500601-ac47e5ec3719?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1446&q=80"

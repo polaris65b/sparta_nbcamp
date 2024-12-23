@@ -50,17 +50,38 @@
             color: white
         }
 
-        .input-group > label {
+        .input-group>label {
             background-color: transparent;
             color: white
         }
-        .mypostingbox > button {
+
+        .mypostingbox>button {
             width: 100%;
         }
     </style>
     <script>
-        function hey() {
-            $('#title').text('쥬라기월드');
+        function openclose() {
+            $('#postingbox').toggle();
+        }
+        function makeCard() {
+            let image = $('#image').val();
+            let title = $('#title').val();
+            let comment = $('#comment').val();
+            let star = $('#star').val();
+
+            let temp_html = `            
+            <div class="col">
+                <div class="card h-100">
+                    <img src="${image}"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${title}</h5>
+                        <p class="card-text">${star}</p>
+                        <p class="card-text">${comment}</p>
+                    </div>
+                </div>
+            </div>`
+            $('#card').append(temp_html);
         }
     </script>
 </head>
@@ -93,41 +114,41 @@
     </div>
     <div class="main">
         <div class="container-fluid py-5">
-            <h1 id="title" class="display-5 fw-bold"> 킹덤 </h1>
+            <h1 class="display-5 fw-bold"> 킹덤 </h1>
             <p class="col-md-8 fs-4">병든 왕을 둘러싸고 흉흉한 소문이 떠돈다. 어둠에 뒤덮인 조선, 기이한 역병에 신음하는 산하. 정체 모를 악에 맞서 백성을 구원할 희망은 오직
                 세자뿐이다.</p>
-            <button type="button" class="btn btn-outline-light">영화 기록하기</button>
+            <button onclick="openclose()" type="button" class="btn btn-outline-light">영화 기록하기</button>
             <button type="button" class="btn btn-outline-light">상세 정보</button>
         </div>
     </div>
-    <div class="mypostingbox">
+    <div class="mypostingbox" id = "postingbox">
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="영화 이미지 주소">
+            <input type="email" class="form-control" id="image" placeholder="영화 이미지 주소">
             <label for="floatingInput">영화 이미지 주소</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="영화 제목">
+            <input type="email" class="form-control" id="title" placeholder="영화 제목">
             <label for="floatingInput">영화 제목</label>
         </div>
         <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">별점</label>
-            <select class="form-select" id="inputGroupSelect01">
+            <select class="form-select" id="star">
                 <option selected>별점 선택</option>
-                <option value="1">⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="5">⭐⭐⭐⭐⭐</option>
+                <option value="⭐">⭐</option>
+                <option value="⭐⭐">⭐⭐</option>
+                <option value="⭐⭐⭐">⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
             </select>
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="추천 이유">
+            <input type="email" class="form-control" id="comment" placeholder="추천 이유">
             <label for="floatingInput">추천 이유</label>
         </div>
-        <button type="button" class="btn btn-danger">기록하기</button>
+        <button onclick="makeCard()" type="button" class="btn btn-danger">기록하기</button>
     </div>
     <div class="mycards">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col">
                 <div class="card h-100">
                     <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
