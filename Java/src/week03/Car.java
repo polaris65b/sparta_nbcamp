@@ -4,17 +4,17 @@ public class Car {
     // 필드 영역
     // 1) 고유 데이터 영역
     String compangy;    // 자동차 회사
-    String model;       // 자동차 모델
+    String model = "Gv80";       // 자동차 모델
     String color;       // 자동차 색
     double price;       // 자동차 가격
 
     // 2) 상태 데이터 영역
     double speed;       // 자동차 속도, km/h
     char gear;          // 기어 상태(P, R, N, D)
-    boolean lights;     // 자동차 조명의 상태
+    boolean lights = true;     // 자동차 조명의 상태
 
     // 3) 객체 데이터 영역
-    Tire tire;
+    Tire tire = new Tire();
     Door door;
     Handle handle;
 
