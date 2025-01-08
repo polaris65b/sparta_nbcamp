@@ -18,7 +18,7 @@ public class Car {
         this(modelName, "Blue", 500000);
     }
     public Car(String modelName, String colorName) {
-        this(modelName, colorName, 50000000);
+        this(modelName, colorName, 500000);
     }
 
     public Car(String modelName, String colorName, double priceValue) {
