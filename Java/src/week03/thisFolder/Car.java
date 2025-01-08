@@ -15,11 +15,10 @@ public class Car {
     Door door = new Door();
     Handle handle = new Handle();
     public Car(String modelName) {
-        model = modelName;
+        this(modelName, "Blue", 500000);
     }
     public Car(String modelName, String colorName) {
-        model = modelName;
-        color = colorName;
+        this(modelName, colorName, 50000000);
     }
 
     public Car(String modelName, String colorName, double priceValue) {
