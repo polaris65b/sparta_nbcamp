@@ -20,7 +20,7 @@ public class Main {
                 operation = new AddOperation();
                 break;
             case "-":
-                operation = new Substractoperation();
+                operation = new SubstractOperation();
                 break;
             case "*":
                 operation = new MultiplyOperation();
